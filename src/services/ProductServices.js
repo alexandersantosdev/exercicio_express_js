@@ -9,14 +9,14 @@ class ProductService {
   ];
 
   getAll() {
-  
+
     return {
-      productsInStock: this.products.reduce((total, product) => {return total + product.stock }, 0),
-      allStockValue: this.products.reduce((total, product) => {return total + this.sumTotal(product.price, product.stock) }, 0),
+      productsInStock: this.products.reduce((total, product) => { return total + product.stock }, 0),
+      allStockValue: this.products.reduce((total, product) => { return total + this.sumTotal(product.price, product.stock) }, 0),
       products: this.products
     };
   }
-  
+
   getOne(id) {
     const product = this.products.find(x => x.id == id);
     return {
